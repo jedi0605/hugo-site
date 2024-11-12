@@ -1,3 +1,88 @@
 /*
     You can add your own custom styles here.
 */
+
+/* Portfolio Grid Layout */
+:root {
+    --portfolio-card-background: var(--card-background);
+    --portfolio-tag-background: var(--primary);
+    --portfolio-tag-color: var(--primary-text);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.portfolio-item {
+    background: var(--portfolio-card-background);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+        .portfolio-image img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+}
+
+.portfolio-details {
+    padding: 1.5rem;
+
+    h2 {
+        margin: 0 0 1rem 0;
+        font-size: 1.5rem;
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+    }
+
+    p {
+        margin: 0 0 1rem 0;
+        color: var(--content);
+    }
+}
+
+.portfolio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.technology-tag {
+    background: var(--portfolio-tag-background);
+    color: var(--portfolio-tag-color);
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}

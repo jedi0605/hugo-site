@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="container-fluid">
+    <div class="portfolio-content">
+        {{ $pages := where .Site.RegularPages "Type" "portfolio" }}
+        {{ $notHidden := where $pages "Params.hidden" "!=" true }}
+
+        <section class="portfolio-grid">
+            {{ range $notHidden }}
+                <article class="portfolio-item">
+                    {{ if .Params.image }}
+                        <div class="portfolio-image">
+                            <a href="{{ .Permalink }}">
+                                <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                            </a>
+                        </div>
+                    {{ end }}
+                    <div class="portfolio-details">
+                        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                        {{ if .Params.description }}
+                            <p>{{ .Params.description }}</p>
+                        {{ end }}
+                        {{ if .Params.technologies }}
+                            <div class="portfolio-tags">
+                                {{ range .Params.technologies }}
+                                    <span class="technology-tag">{{ . }}</span>
+                                {{ end }}
+                            </div>
+                        {{ end }}
+                    </div>
+                </article>
+            {{ end }}
+        </section>
+    </div>
+</div>
+{{ end }}

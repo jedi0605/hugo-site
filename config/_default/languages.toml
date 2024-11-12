@@ -1,0 +1,16 @@
+# Rename this file to languages.toml to enable multilingual support
+[en]
+languageName = "English"
+languagedirection = "ltr"
+title = "Meng-Chieh"
+weight = 1
+contentDir = 'content/en'
+languageCode = 'en'
+languageDirection = 'ltr'
+    
+[zh-tw]
+languageName = "繁中"
+languagedirection = "ltr"
+title = "Meng-Chieh"
+weight = 2
+contentDir = 'content/zh-tw'
