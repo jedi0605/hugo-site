@@ -3,7 +3,7 @@ title: Portfolio
 description: My Projects and Works
 menu:
     main:
-        weight: 4
+        weight: 3
         params:
             icon: folder
 ---

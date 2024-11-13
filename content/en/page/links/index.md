@@ -13,11 +13,12 @@ links:
     description: 針對大型搖擺舞活動(300人以上)架設的網站，其中金流是使用外部的第三方服務
     website: https://c2cswing.com
     image: https://img.swingyoyo.com/c2c_cover.webp
-menu:
-    main: 
-        weight: 6
-        params:
-            icon: link
+
+main: 
+    weight: 6
+    params:
+        icon: link
+            
 
 comments: false
 ---
